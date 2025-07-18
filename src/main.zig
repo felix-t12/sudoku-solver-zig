@@ -164,6 +164,7 @@ fn solve_step() !void {
 
     if (i.* > max_i) {
         state.solving = false;
+        //state.solver.idxs.deinit();
         return;
     }
 
@@ -194,7 +195,6 @@ fn check() void {
             if (num == 0) continue;
             const idx = @as(usize, @intCast(num));
             if (seen.isSet(idx)) {
-                //std.debug.print("illegal row {}:  {any}\n", .{ i, row });
                 state.legal = false;
                 return;
             } else {
@@ -274,6 +274,7 @@ pub fn main() anyerror!void {
     state.steps_per_frame = 500;
 
     state.solver.idxs = std.ArrayList(usize).init(state.allocator);
+    defer state.solver.idxs.deinit();
 
     state.mouse_point = Vector2.init(0, 0);
 
