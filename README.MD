@@ -8,6 +8,9 @@ A visual Sudoku solver built with Zig and Raylib featuring:
 - Adjustable solving speed
 - Visual feedback for player vs solver numbers
 
+## Screenshots
+
+![Solved Sudoku](screenshots/solved_sudoku.png)
 
 ## Algorithm
 Uses a backtracking algorithm that:
