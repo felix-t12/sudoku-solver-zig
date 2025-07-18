@@ -6,7 +6,6 @@ const Vector2 = rl.Vector2;
 
 const GAP = 40;
 const THICKNESS = 2;
-// top, bottom and line between 3x3 is times as thick
 const SIZE = GAP * 9;
 const STARTING_X = 100;
 const STARTING_Y = 100;
@@ -164,7 +163,6 @@ fn solve_step() !void {
 
     if (i.* > max_i) {
         state.solving = false;
-        //state.solver.idxs.deinit();
         return;
     }
 
@@ -178,7 +176,6 @@ fn solve_step() !void {
         check();
     }
     if (state.legal) {
-        //std.debug.print("legal\n", .{});
         state.solver.curr_i += 1;
     }
 }
